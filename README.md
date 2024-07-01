@@ -1,6 +1,54 @@
 # Pizza_Sales_Analysis
 This project involves ingesting tables from an on-premise SQL Server database to Azure Data Lake using Azure Data Factory. Azure Databricks then transforms the raw data into a clean form. Finally, Microsoft Power BI integrates with Azure Synapse Analytics to build an interactive dashboard.
 # Architecture Flow
++-----------------------+
+|   On-Premise SQL      |
+|      Server           |
+|                       |
+|  (Source of Data)     |
++-----------+-----------+
+            |
+            v
++-----------------------+
+|   Azure Data Factory  |
+|       (ADF)           |
+|                       |
+| (Ingests Data from    |
+|  SQL Server)          |
++-----------+-----------+
+            |
+            v
++-----------------------+
+| Azure Data Lake       |
+|  Storage Gen2         |
+|  (Stores Raw Data)    |
++-----------+-----------+
+            |
+            v
++-----------------------+
+|   Azure Databricks    |
+|                       |
+| (Transforms Raw Data  |
+|  to Clean Data)       |
++-----------+-----------+
+            |
+            v
++-----------------------+
+|  Azure Synapse        |
+|    Analytics          |
+|                       |
+| (Stores Processed     |
+|  Data)                |
++-----------+-----------+
+            |
+            v
++-----------------------+
+|   Microsoft Power BI  |
+|                       |
+| (Creates Interactive  |
+|  Dashboards)          |
++-----------------------+
+
 ## On-Premise SQL Server:
 
 Represents the source of the data.
