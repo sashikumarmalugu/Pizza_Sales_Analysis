@@ -1,76 +1,28 @@
 # Pizza_Sales_Analysis
 This project involves ingesting tables from an on-premise SQL Server database to Azure Data Lake using Azure Data Factory. Azure Databricks then transforms the raw data into a clean form. Finally, Microsoft Power BI integrates with Azure Synapse Analytics to build an interactive dashboard.
 # Architecture Flow
-+-----------------------+
-|   On-Premise SQL      |
-|      Server           |
-|                       |
-|  (Source of Data)     |
-+-----------+-----------+
-            |
-            v
-+-----------------------+
-|   Azure Data Factory  |
-|       (ADF)           |
-|                       |
-| (Ingests Data from    |
-|  SQL Server)          |
-+-----------+-----------+
-            |
-            v
-+-----------------------+
-| Azure Data Lake       |
-|  Storage Gen2         |
-|  (Stores Raw Data)    |
-+-----------+-----------+
-            |
-            v
-+-----------------------+
-|   Azure Databricks    |
-|                       |
-| (Transforms Raw Data  |
-|  to Clean Data)       |
-+-----------+-----------+
-            |
-            v
-+-----------------------+
-|  Azure Synapse        |
-|    Analytics          |
-|                       |
-| (Stores Processed     |
-|  Data)                |
-+-----------+-----------+
-            |
-            v
-+-----------------------+
-|   Microsoft Power BI  |
-|                       |
-| (Creates Interactive  |
-|  Dashboards)          |
-+-----------------------+
-
-## On-Premise SQL Server:
+### On-Premise SQL Server:
 
 Represents the source of the data.
 Connected to Azure Data Factory (ADF).
-## Azure Data Factory (ADF):
+### Azure Data Factory (ADF):
 
 Ingests data from the on-premise SQL Server.
 Transfers data to Azure Data Lake Storage Gen2.
-## Azure Data Lake Storage Gen2:
+### Azure Data Lake Storage Gen2:
 
 Stores raw data ingested by ADF.
 Connected to Azure Databricks.
-## Azure Databricks:
+### Azure Databricks:
 
 Reads raw data from Azure Data Lake.
 Transforms raw data into a clean, processed form.
 Stores processed data back in Azure Data Lake or writes directly to Azure Synapse Analytics.
-## Azure Synapse Analytics:
+### Azure Synapse Analytics:
 
 Stores the processed data from Azure Databricks.
 Provides data to Power BI.
-## Microsoft Power BI:
+### Microsoft Power BI:
 
 Connects to Azure Synapse Analytics.
 Creates interactive dashboards and reports using the processed data.
